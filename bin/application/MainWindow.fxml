@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="998.0" prefWidth="1412.0" style="-fx-background-color: dimgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+	<right>
+		<AnchorPane prefHeight="674.0" prefWidth="245.0" style="-fx-background-color: lightblue; -fx-padding: 0;" BorderPane.alignment="CENTER">
+			<children>
+				<Label alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="31.0" prefHeight="30.0" prefWidth="64.0" text="Source: ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+				<ChoiceBox fx:id="source" layoutX="77.0" layoutY="34.0" prefHeight="25.0" prefWidth="138.0" />
+				<Label alignment="CENTER" layoutX="18.0" layoutY="79.0" prefHeight="30.0" prefWidth="61.0" text="Target: ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+				<ChoiceBox fx:id="target" layoutX="78.0" layoutY="82.0" prefHeight="25.0" prefWidth="138.0" />
+				<Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="1.0" layoutX="58.0" layoutY="107.0" mnemonicParsing="false" onAction="#run" prefHeight="97.0" prefWidth="129.0" style="-fx-background-color: #008CBA; -fx-label-padding: 25 28 25 28; -fx-border-insets: 28px; -fx-background-insets: 28px; -fx-background-radius: 16;" styleClass="-fx-background-color: #008CBA;" text="Run" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="20.0" />
+					</font>
+				</Button>
+            <AnchorPane layoutX="7.0" layoutY="260.0" prefHeight="219.0" prefWidth="184.0">
+               <children>
+      				<Label layoutX="28.0" layoutY="204.0" prefHeight="30.0" prefWidth="129.0" text="Total Distance : ">
+      					<font>
+      						<Font name="System Bold" size="15.0" />
+      					</font>
+      				</Label>
+                  <ListView fx:id="pathListView" layoutX="6.0" layoutY="-18.0" prefHeight="206.0" prefWidth="220.0" style="-fx-border-color: #FFA419; -fx-background-radius: 5; -fx-border-radius: 5;" />
+               </children>
+            </AnchorPane>
+            <Button cancelButton="true" contentDisplay="CENTER" layoutX="57.0" layoutY="740.0" mnemonicParsing="false" onAction="#clear" prefHeight="71.0" prefWidth="134.0" style="-fx-background-color: #008CBA; -fx-background-insets: 15; -fx-label-padding: 10; -fx-border-insets: 10; -fx-background-radius: 16;" text="clear-all" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+				<Separator layoutX="30.0" layoutY="189.0" prefHeight="32.0" prefWidth="170.0" />
+				<Label layoutX="12.0" layoutY="213.0" prefHeight="30.0" prefWidth="62.0" text="Path : ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+            <Button contentDisplay="CENTER" defaultButton="true" layoutX="66.0" layoutY="661.0" mnemonicParsing="false" onAction="#showPaths" prefHeight="60.0" prefWidth="117.0" style="-fx-background-color: #008CBA; -fx-background-insets: 15; -fx-label-padding: 10; -fx-border-insets: 10; -fx-background-radius: 16;" text="All Paths" textFill="WHITE" underline="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TextField fx:id="TTime" layoutX="43.0" layoutY="568.0" prefHeight="27.0" prefWidth="66.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="TSpace" layoutX="167.0" layoutY="568.0" prefHeight="27.0" prefWidth="66.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <Label layoutX="123.0" layoutY="566.0" prefHeight="30.0" prefWidth="46.0" text="Space">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="566.0" prefHeight="30.0" prefWidth="43.0" text="Time">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="48.0" layoutY="536.0" prefHeight="4.0" prefWidth="170.0" />
+				<TextField fx:id="distanceView" layoutX="36.0" layoutY="495.0" prefHeight="25.0" prefWidth="152.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <Label layoutX="189.0" layoutY="496.0" prefHeight="25.0" prefWidth="22.0" text="km">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+			</children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+		</AnchorPane>
+	</right>
+   <center>
+      <VBox minHeight="0.0" prefHeight="950.0" prefWidth="1167.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane minHeight="0.0" prefHeight="854.0" prefWidth="1152.0">
+              <content>
+                <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" onMouseMoved="#mouseCoordinates" prefHeight="854.0" prefWidth="1152.0" style="-fx-background-color: dimgray;">
+                     <children>
+                        <ImageView fitHeight="854.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@rr.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <SplitPane dividerPositions="0.528395061728395" prefHeight="11.0" prefWidth="1167.0" style="-fx-border-color: gray; -fx-border-width: 2;">
+               <items>
+                  <Label fx:id="coordinates" prefHeight="17.0" prefWidth="385.0" />
+                  <Label fx:id="showTown" prefHeight="0.0" prefWidth="250.0" />
+               </items>
+            </SplitPane>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" prefHeight="112.0" prefWidth="1412.0" style="-fx-background-color: lightblue; -fx-border-color: #FFA419; -fx-border-width: 0 0 3 0;" BorderPane.alignment="TOP_CENTER">
+         <children>
+      		<MenuBar minWidth="1046.0" prefHeight="0.0" prefWidth="1046.0">
+      			<menus>
+      				<Menu mnemonicParsing="false" text="File">
+      					<items>
+      						<MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+      					</items>
+      				</Menu>
+      				<Menu mnemonicParsing="false" text="Help">
+      					<items>
+      						<MenuItem mnemonicParsing="false" onAction="#help" text="About" />
+      					</items>
+      				</Menu>
+      			</menus>
+      		</MenuBar>
+            <AnchorPane prefHeight="102.0" prefWidth="1412.0">
+               <children>
+                  <ImageView fitHeight="95.0" fitWidth="108.0" layoutX="1250.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 15;">
+                     <image>
+                        <Image url="@map-png-icon-5.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="5.0" prefHeight="84.0" prefWidth="639.0" style="-fx-background-color: #ffffff; -fx-border-color: #008CBA; -fx-border-width: 3; -fx-border-radius: 40; -fx-background-radius: 45;" styleClass="p" text="Ramallah A* Map">
+                     <font>
+                        <Font size="53.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
